@@ -130,7 +130,7 @@ const zooAnimals = [
   */
 
   function consume(a, b, cb){
-    return cb;
+    return cb(a, b);
   }
  
   
@@ -188,10 +188,10 @@ console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice t
 - Instances of CuboidMaker should initialize `length`, `width` and `height` properties
 */
 
-function CuboidMaker(length, width, height){
-  this.length = length;
-  this.width = width;
-  this.height = height;
+function CuboidMaker (attributes){
+  this.length = attributes.length;
+  this.width = attributes.width;
+  this.height = attributes.height;
 }
 
 
@@ -232,10 +232,10 @@ console.log(cuboid.surfaceArea()); // 130
 //Using CuboidMakerTwo, take your prototypes from above and refactor into class syntax. Then, create an object called cuboidTwo that uses the new keyword to use our CuboidMakerTwo class.
  
 class CuboidMakerTwo{
-  constructor(length, width, height){
-  this.length = length;
-  this.width = width;
-  this.height = height;
+  constructor(attributes){
+  this.length = attributes.length;
+  this.width = attributes.width;
+  this.height = attributes.height;
   }
   volume(){
     return this.length * this.width * this.height;
