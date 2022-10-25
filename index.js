@@ -151,7 +151,7 @@ function add(a, b){
 2. Return the product of those numbers
 */
 
-function multiply(a, bb){
+function multiply(a, b){
    return a * b;
   }
 
