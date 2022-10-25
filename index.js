@@ -61,10 +61,13 @@ const zooAnimals = [
   💡 NOTE: the array returned should be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function animalNames(zooAnimals){
+    const displayNames = zooAnimals.forEach(function(item){
+      return `name: ${item.animal_name}, scientific: ${item.scientific_name}`
+    })
+    return displayNames;
   }
-  
+
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
@@ -76,8 +79,11 @@ const zooAnimals = [
   💡 NOTE: Do some research for other methods that can help help you
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowerCaseNames(zooAnimals){
+    const newAnimalNames = zooAnimals.map(function(item){
+      return item.animal_name.toLowerCase();
+    })
+    return newAnimalNames;
   }
   
   
@@ -89,8 +95,11 @@ const zooAnimals = [
   3. Return this new array
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(zooAnimals){
+    const newAnimalFilter = zooAnimals.filter(function(item){
+      return item.population < 5;
+    })
+    return newAnimalFilter;
   }
   
 
@@ -103,8 +112,11 @@ const zooAnimals = [
   💡 NOTE: Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count. Check MDN/W3Schools for syntax!
   */
 
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
+  function USApop(zooAnimals){
+    const totalPop = zooAnimals.reduce(function(accumulator, item){
+      return accumulator + item.population;
+    },0);
+    return totalPop;
   }
   
   
